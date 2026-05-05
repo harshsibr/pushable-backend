@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>USER REGISTRATION</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="body">
+            <div class="bg-purple">
+                <div class="bg-white">
+                    <div class="bg-purple">
+                        <div class="header">
+                            <img src="" alt="">
+                        </div>
+                        <div class="content">                
+                            <p> Dear <b><%= email %></b> </p>
+                            <div>
+                                <p style="margin-top: 20px;"><b> Your Password for your <a href="https://testuity.com/">testuity.com</a> account<br>
+                                    is : <%= password %> (random password provided by system)<br> </b>
+                                    You can request a new password by <a href="<%= redirect_url %>/user/forget-password/<%= token %>">clicking here.</a><br>
+                                    You'll be able to change your new password yourself.<br>
+                                    <br>
+                                    If you haven't requested this reset yourself, please contact us.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

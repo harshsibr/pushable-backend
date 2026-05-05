@@ -1,0 +1,88 @@
+<html>
+
+<head>
+
+    <title>CERTIFICATE</title>
+    
+</head>
+
+
+<body>
+    <div class="container-fluid">
+        <div class="body">
+            <div class="bg-purple">
+                <div class="bg-white">
+                    <div class="bg-purple">
+                        <div class="header">
+                            <img src="" alt="">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                        <div class="content">                
+                            <p> Hello <b><%= username %> <%= surname %></b> </p>
+                            <p >Thank you for taking our test!<p>
+                            
+                                <% if (classicalTestStatus == false || cultureTestStatus == false || ennagramTestStatus == false || sixteentypeTestStatus == false || bigFiveTestStatus == false) { %>
+                                    <div style="margin-top: 20px;">
+                                        <p>Maybe you want to try our other paid tests<b>:</b></p>
+                                    </div>
+                                <% } %>
+
+                                <% if (classicalTestStatus == false) { %>
+                                    <div style="margin-top: 20px;">
+                                            <a href="https://testuity.com/classical-iq-test"> <%= paidTestButton="Classical IQ test"; %> </a>
+                                        
+                                    </div>
+                                <% } %>
+
+                                <% if (cultureTestStatus == false) { %>    
+                                    <div style="margin-top: 20px; margin-bottom: 20px;">
+                                            <a href="https://testuity.com/culture-fair-iq-test"> <%= paidTestButton="Culture Fair IQ test"; %> </a>
+                                        
+                                    </div>
+                                <% } %>
+
+                                <% if (ennagramTestStatus == false) { %>    
+                                    <div style="margin-top: 20px; margin-bottom: 20px;">
+                                            <a href="https://testuity.com/enneagram-personality-test"> <%= paidTestButton="Enneagram test"; %> </a>
+                                        
+                                    </div>
+                                <% } %>
+
+                                <% if (sixteentypeTestStatus == false) { %>    
+                                    <div style="margin-top: 20px; margin-bottom: 20px;">
+                                            <a href="https://testuity.com/16-types-personality-test"> <%= paidTestButton="16 types personality test"; %> </a>
+                                        
+                                    </div>
+                                <% } %>
+
+                                <% if (bigFiveTestStatus == false) { %>    
+                                    <div style="margin-top: 20px; margin-bottom: 20px;">
+                                            <a href="https://testuity.com/big-five-personality-test"> <%= paidTestButton="Big Five personality test"; %> </a>
+                                        
+                                    </div>
+                                <% } %>
+
+                                <% if (discTestStatus == false) { %>    
+                                    <div style="margin-top: 20px; margin-bottom: 20px;">
+                                            <a href="https://testuity.com/disc-personality-test"> <%= paidTestButton="DISC personality test"; %> </a>
+                                        
+                                    </div>
+                                <% } %>
+
+                                <% if (careerATestStatus == false) { %>    
+                                    <div style="margin-top: 20px; margin-bottom: 20px;">
+                                            <a href="https://testuity.com/career-aptitude-test"> <%= paidTestButton="Career Aptitude test"; %> </a>
+                                        
+                                    </div>
+                                <% } %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

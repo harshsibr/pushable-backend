@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        body {
+                border: 0;
+    box-sizing: content-box;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    list-style: none;
+    margin: 20;
+    padding: 20;
+    text-decoration: none;
+    vertical-align: top;
+        }
+        header {
+  margin: 0 0 3em;
+}
+
+h1 {
+  font: bold 100% sans-serif;
+  letter-spacing: 0.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+header h1 {
+  background: black;
+  border-radius: 0.25em;
+  color: white;
+  margin: 0 0 1em;
+  padding: 0.5em 0;
+}
+
+header address {
+  float: left;
+  font-size: 75%;
+  font-style: normal;
+  line-height: 1.25;
+  margin: 0 1em 1em 0;
+  background: #EEE;
+  padding: 2px;
+}
+
+header address p {
+  margin: 0 0 0.25em;
+}
+
+header span, header img { display: block; float: right; }
+header span { margin: 0 0 1em 1em; max-height: 25%; max-width: 60%; position: relative; }
+header img { max-height: 50%; max-width: 50%; }
+
+header:after { clear: both; content: ""; display: table; }
+
+/* article */
+
+article, article address, table { margin: 0 0 3em; }
+article h1 { clip: rect(0 0 0 0); position: absolute; }
+article address { float: left; font-size: 125%; font-weight: bold; }
+
+article:after { clear: both; content: ""; display: table; }
+
+/* table */
+
+table { font-size: 75%; table-layout: auto; width: 100%; }
+table { border-collapse: separate; border-spacing: 0px; }
+th, td { border-width: 1px; padding: 1em; position: relative; text-align: left; border: none; }
+/* th, td { border-radius: 0.25em; border-style: solid; } */
+/* th { background: #EEE; border-color: #BBB; } */
+table.firstTable th, td { background: #EEE; }
+table.secondTable th, td { background: #EEE; border-color: #BBB; }
+table.secondTable td { background: #EEE; border-color: #BBB; }
+table.secondTable th { background: #000; color: #fff; text-align: center; }
+
+/* table firstTable */
+
+table.firstTable { float: right; width: 45%; height: 50%;}
+table.firstTable:after { clear: both; content: ""; display: table; }
+
+/* table firstTable */
+
+table.firstTable th { width: 40%; }
+table.firstTable td { width: 60%; }
+
+form { font: 16px/1 'Open Sans', sans-serif; overflow: auto; padding: 0.5in; }
+form { background: #999; cursor: default; }
+
+form { box-sizing: border-box; height: 11in; margin: 0 auto; overflow: hidden; padding: 0.5in; width: 8.5in; }
+form { background: #FFF; border-radius: 1px; box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5); }
+
+aside h1#notes { border: none; border-width: 0 0 1px; margin: 0 0 1em; }
+aside h1#notes { border-color: #999; border-bottom-style: solid; border-bottom-width: 10%; font: bold 100% sans-serif;
+  letter-spacing: 0.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.secondTable {
+    border-spacing: 2px;
+}
+        
+    </style>
+</head>
+
+<body>
+    <div style="margin: 10px 20px 10px 20px;">
+        <header>
+
+            <!-- <h1> INVOICE </h1> -->
+            <address>
+                <p> Name <span>Surname</span> </p>
+                <p> user_address_one </p>
+                <p> user_address_two </p>
+            </address>
+
+            <span style="text-align: right">
+                <address>
+
+                <h2 style="font-size: 40px; margin: 0px;"> INVOICE </h2>
+                <p> Admin title </p>
+                <p> Admin address </p>
+            </address>
+            </span>
+
+        </header>
+
+        <article>
+            <address>
+                <p>  </p>
+            </address>
+
+            <table class="firstTable">
+                <tr>
+                    <th><span>Invoice Number</span></th>
+                    <td><span>invoice_number</span></td>
+                </tr>
+                <tr>
+                    <th><span>Invoice Date</span></th>
+                    <td><span>invoice_date</span></td>
+                </tr>
+                <tr>
+                    <th><span>Order ID Number</span></th>
+                    <td><span id="prefix"></span><span>order_id_number</span></td>
+                </tr>
+                <tr>
+                    <th><span>Delivery Date</span></th>
+                    <td><span id="prefix"></span><span>delivery_date</span></td>
+                </tr>
+            </table>
+
+            <table class="secondTable">
+                <thead>
+                    <tr>
+                        <th><span>DESCRIPTION</span></th>
+                        <th><span>QUANTITY</span></th>
+                        <th><span>UNIT PRICE</span></th>
+                        <th><span>TOTAL</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a class="cut"></a><span>description</span></td>
+                        <td><span>qty</span></td>
+                        <td><span data-prefix>$</span><span>unit_price</span></td>
+                        <td><span>$ total_amount</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="firstTable">
+                <tr>
+                    <th><span>SUBTOTAL</span></th>
+                    <td><span data-prefix>$</span><span>total_amount</span></td>
+                </tr>
+                <tr>
+                    <th><span>SALES TAX</span></th>
+                    <td><span data-prefix>$</span><span>0.00</span></td>
+                </tr>
+                <tr>
+                    <th><span>TOTAL</span></th>
+                    <td><span data-prefix>$</span><span>total_amount</span></td>
+                </tr>
+            </table>
+        </article>
+
+        <p style="text-align: center;">Neimpozabil in Romania conform art.275 alin.la din Codul Fiscal</p>
+    </div>
+</body>
+
+</html>

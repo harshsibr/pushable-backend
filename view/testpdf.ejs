@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Big Five</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* body{
+             padding: 10px;
+           
+         } */
+        .container {
+            /* width: 60%; */
+            /* height: 100vh; */
+            background-color: white;
+            margin: auto;
+            border: 1px solid #f3f1f1;
+
+        }
+
+        .header {
+            height: 100px;
+            margin-top: 3px;
+            /* background: #137d41; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .heading-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            margin-left: 50px;
+
+        }
+
+        .heading {
+            /* color: #137d41; */
+            font-size: 40px;
+        }
+
+
+        .result {
+            margin-right: 50px;
+            /* color: #137d41; */
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            margin-bottom: 50px;
+        }
+
+
+        . {
+            font-size: 33px;
+            font-weight: 200;
+            /* margin:10px 0px; */
+        }
+
+        .description {
+
+            font-size: 18px !important;
+
+        }
+
+        .sub-heading {
+            font-size: 22px;
+            font-weight: lighter;
+        }
+
+        .container {
+            margin-bottom: 6px;
+            font-size: 18px;
+        }
+
+        .apple-container {
+            display: flex;
+            gap: 14px;
+        }
+
+        .my_table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border-left: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        .noborder {
+            border-bottom: none;
+        }
+
+        .noleftborder {
+            border-left: none;
+        }
+
+        .ul-heading {
+            font-size: 16px !important;
+            font-weight: 600;
+            list-style-type: none;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .list-item {
+            margin: 0;
+            padding: 0;
+            margin-left: 17px;
+            font-size: 18px !important;
+            list-style-type: decimal;
+        }
+
+        .blocks {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+        }
+
+        div {
+            gap: 0;
+        }
+
+        /* progrressbar css */
+        .progress-container {
+            width: 100%;
+            height: 40px;
+            background: white;
+            display: flex;
+            color: white;
+            margin-bottom: 15px;
+            margin-top: 15px;
+
+
+        }
+
+        .first {
+            height: 100%;
+            /* width: 50%; */
+            /* background: red; */
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .second {
+            /* width: 50%; */
+            height: 100%;
+            /* background: blue; */
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .chart-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .container_piechart {
+            width: 80%;
+            margin: 15px auto;
+        }
+
+        #oilChart {
+            width: 250px !important;
+            height: 250px !important;
+            /* font-size: 20px !important; */
+
+        }
+
+        /* .blocks {
+        display: flex;
+        justify-content: space-between; 
+        margin-top: 10px;
+    } */
+        .blocks>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            height: 250px;
+            padding: 10px;
+
+        }
+
+        .margindiv {
+            margin-top: 5px;
+        }
+
+        .marginDiv {
+            margin-top: 5px;
+        }
+
+        .marginDivs {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .dis1 {
+            margin-top: 5px;
+        }
+
+        .content-breck {
+            page-break-inside: avoid !important;
+        }
+
+        .vertical-space {
+            margin: 20px 0px;
+        }
+
+        .top-extra-space {
+            margin-top: 20px;
+        }
+
+        .bottom-extra-space {
+            margin-bottom: 20px;
+        }
+
+
+        .flex-container {
+            /* display: flex;
+            align-items: center;
+            width: 100%; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            /* Ensure the container takes full width of its parent */
+        }
+
+        .flex-item {
+            /*height: 50px;  */
+            /*color: white;*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*text-align: center;*/
+        }
+
+        .first,
+        .third {
+            flex: 0 0 40%;
+            /* Do not grow or shrink, take up 40% of the flex container */
+            /*background-color: #4CAF50; */
+        }
+
+        .second {
+            flex: 0 0 20%;
+            /* Do not grow or shrink, take up 20% of the flex container */
+            /*background-color: #2196F3; */
+        }
+
+        .chart-id-one {
+            position: relative;
+        }
+
+        .ab-test {
+            position: absolute;
+            content: '';
+            top: 25px;
+            left: 5px;
+            width: 10px;
+            height: 10px;
+            color: #000;
+        }
+
+        .cd-test {
+            position: absolute;
+            content: '';
+            top: 25px;
+            right: 20px;
+            width: 10px;
+            height: 10px;
+            color: #000;
+        }
+
+        .ef-test {
+            position: absolute;
+            content: '';
+            bottom: 25px;
+            left: 5px;
+            width: 10px;
+            height: 10px;
+            color: #000;
+        }
+
+        .gh-test {
+            position: absolute;
+            content: '';
+            bottom: 25px;
+            right: 20px;
+            width: 10px;
+            height: 10px;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="container">
+        <div>
+            <!-- SECTION-21 -->
+            <div class=" ">
+                <!-- <h3 class="vertical-space">
+                    Social pattern:
+                </h3>
+                <p class="description">
+                    This circumplex describes how you position
+                    yourself in relation to groups and how you feel
+                    you fit in social gatherings.
+                </p> -->
+                <div class=" ">
+                    <h3 class="vertical-space">
+                        Social pattern:
+                    </h3>
+                    <p class="description">
+                        This circumplex describes how you position
+                        yourself in relation to groups and how you feel
+                        you fit in social gatherings.
+                    </p>
+                    <div class="flex-container">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(97 179 97 / 59%);">
+                                    <b>
+                                        Sociable Traditionalist
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual is outgoing and
+                                    social, enjoying interactions with
+                                    others.
+                                    Prefers familiar and practical
+                                    experiences over novel or
+                                    unconventional ones.
+                                    Thrives in social environments that
+                                    allow for connection and engagement
+                                    with others.
+
+                                </p>
+                            </div>
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(133 119 175);">
+                                    <b>
+                                        Tranquil Introvert
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual is generally
+                                    calm and composed, not easily
+                                    swayed by emotional ups and
+                                    downs.
+                                    Prefers a quieter and more
+                                    introspective lifestyle, finding
+                                    solace in personal space and
+                                    reflection.
+                                    May prioritize a small,
+                                    close-knit social circle over
+                                    larger social gatherings.
+
+                                </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center; padding: 1px;">
+                            <div>
+                                <canvas id="chartId_four" aria-label="chart" height="200px" width="200px">
+                                </canvas>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(0 67 255 / 45%);">
+                                    <b>
+                                        Supportive Traditionalist
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual values stability and
+                                    practicality in their approach to
+                                    life.
+                                    Is considerate, cooperative, and
+                                    places a high value on maintaining
+                                    harmonious relationships.
+                                    Thrives in environments where
+                                    teamwork, cooperation, and social
+                                    harmony are important.
+
+                                </p>
+                            </div>
+                            <div class="content-breck ">
+                                <p class="description vertical-space" style="text-align: left; color: #ffa50187">
+                                    <b>
+                                        Grounded Observer
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual appreciates
+                                    stability and routine in both
+                                    thought and behavior.
+                                    Tends to be reserved and
+                                    introverted, finding solace in
+                                    quieter, more reflective
+                                    settings.
+                                    Prefers a smaller, close-knit
+                                    social circle and may need
+                                    downtime for personal
+                                    reflection.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class=" ">
+                    <h3 class="vertical-space">
+                        Social pattern:
+                    </h3>
+                    <p class="description">
+                        This circumplex describes how you position
+                        yourself in relation to groups and how you feel
+                        you fit in social gatherings.
+                    </p>
+                    <div class="flex-container">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(97 179 97 / 59%);">
+                                    <b>
+                                        Sociable Traditionalist
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual is outgoing and
+                                    social, enjoying interactions with
+                                    others.
+                                    Prefers familiar and practical
+                                    experiences over novel or
+                                    unconventional ones.
+                                    Thrives in social environments that
+                                    allow for connection and engagement
+                                    with others.
+
+                                </p>
+                            </div>
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(133 119 175);">
+                                    <b>
+                                        Tranquil Introvert
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual is generally
+                                    calm and composed, not easily
+                                    swayed by emotional ups and
+                                    downs.
+                                    Prefers a quieter and more
+                                    introspective lifestyle, finding
+                                    solace in personal space and
+                                    reflection.
+                                    May prioritize a small,
+                                    close-knit social circle over
+                                    larger social gatherings.
+
+                                </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center; padding: 1px;">
+                            <div>
+                                <canvas id="chartId_two" aria-label="chart" height="200px" width="200px">
+                                </canvas>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(0 67 255 / 45%);">
+                                    <b>
+                                        Supportive Traditionalist
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual values stability and
+                                    practicality in their approach to
+                                    life.
+                                    Is considerate, cooperative, and
+                                    places a high value on maintaining
+                                    harmonious relationships.
+                                    Thrives in environments where
+                                    teamwork, cooperation, and social
+                                    harmony are important.
+
+                                </p>
+                            </div>
+                            <div class="content-breck ">
+                                <p class="description vertical-space" style="text-align: left; color: #ffa50187">
+                                    <b>
+                                        Grounded Observer
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual appreciates
+                                    stability and routine in both
+                                    thought and behavior.
+                                    Tends to be reserved and
+                                    introverted, finding solace in
+                                    quieter, more reflective
+                                    settings.
+                                    Prefers a smaller, close-knit
+                                    social circle and may need
+                                    downtime for personal
+                                    reflection.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class=" ">
+                    <h3 class="vertical-space">
+                        Social pattern:
+                    </h3>
+                    <p class="description">
+                        This circumplex describes how you position
+                        yourself in relation to groups and how you feel
+                        you fit in social gatherings.
+                    </p>
+                    <div class="flex-container">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(97 179 97 / 59%);">
+                                    <b>
+                                        Sociable Traditionalist
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual is outgoing and
+                                    social, enjoying interactions with
+                                    others.
+                                    Prefers familiar and practical
+                                    experiences over novel or
+                                    unconventional ones.
+                                    Thrives in social environments that
+                                    allow for connection and engagement
+                                    with others.
+
+                                </p>
+                            </div>
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(133 119 175);">
+                                    <b>
+                                        Tranquil Introvert
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual is generally
+                                    calm and composed, not easily
+                                    swayed by emotional ups and
+                                    downs.
+                                    Prefers a quieter and more
+                                    introspective lifestyle, finding
+                                    solace in personal space and
+                                    reflection.
+                                    May prioritize a small,
+                                    close-knit social circle over
+                                    larger social gatherings.
+
+                                </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center; padding: 1px;">
+                            <div>
+                                <canvas id="chartId_three" aria-label="chart" height="200px" width="200px">
+                                </canvas>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(0 67 255 / 45%);">
+                                    <b>
+                                        Supportive Traditionalist
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual values stability and
+                                    practicality in their approach to
+                                    life.
+                                    Is considerate, cooperative, and
+                                    places a high value on maintaining
+                                    harmonious relationships.
+                                    Thrives in environments where
+                                    teamwork, cooperation, and social
+                                    harmony are important.
+
+                                </p>
+                            </div>
+                            <div class="content-breck ">
+                                <p class="description vertical-space" style="text-align: left; color: #ffa50187">
+                                    <b>
+                                        Grounded Observer
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual appreciates
+                                    stability and routine in both
+                                    thought and behavior.
+                                    Tends to be reserved and
+                                    introverted, finding solace in
+                                    quieter, more reflective
+                                    settings.
+                                    Prefers a smaller, close-knit
+                                    social circle and may need
+                                    downtime for personal
+                                    reflection.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" ">
+                    <h3 class="vertical-space">
+                        Social pattern:
+                    </h3>
+                    <p class="description">
+                        This circumplex describes how you position
+                        yourself in relation to groups and how you feel
+                        you fit in social gatherings.
+                    </p>
+                    <div class="flex-container">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(97 179 97 / 59%);">
+                                    <b>
+                                        Sociable Traditionalist
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual is outgoing and
+                                    social, enjoying interactions with
+                                    others.
+                                    Prefers familiar and practical
+                                    experiences over novel or
+                                    unconventional ones.
+                                    Thrives in social environments that
+                                    allow for connection and engagement
+                                    with others.
+
+                                </p>
+                            </div>
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(133 119 175);">
+                                    <b>
+                                        Tranquil Introvert
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual is generally
+                                    calm and composed, not easily
+                                    swayed by emotional ups and
+                                    downs.
+                                    Prefers a quieter and more
+                                    introspective lifestyle, finding
+                                    solace in personal space and
+                                    reflection.
+                                    May prioritize a small,
+                                    close-knit social circle over
+                                    larger social gatherings.
+
+                                </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center; padding: 1px;">
+                            <!-- <div>
+                                <canvas id="chartId_five" aria-label="chart" height="200px" width="200px">
+                                </canvas>
+                            </div> -->
+                            <div class="chart-id-one">
+                                <p class="ab-test" style="color: rgb(97 179 97 / 59%);">AB</p>
+                                <p class="cd-test" style="color: rgb(0 67 255 / 45%);">CD</p>
+                                <p class="ef-test" style="color: rgb(133 119 175);">EF</p>
+                                <p class="gh-test" style="color: #ffa50187">GH</p>
+                                <canvas id="chartId_five" aria-label="chart" height="200px" width="200px">
+                                </canvas>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(0 67 255 / 45%);">
+                                    <b>
+                                        Supportive Traditionalist
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual values stability and
+                                    practicality in their approach to
+                                    life.
+                                    Is considerate, cooperative, and
+                                    places a high value on maintaining
+                                    harmonious relationships.
+                                    Thrives in environments where
+                                    teamwork, cooperation, and social
+                                    harmony are important.
+
+                                </p>
+                            </div>
+                            <div class="content-breck ">
+                                <p class="description vertical-space" style="text-align: left; color: #ffa50187">
+                                    <b>
+                                        Grounded Observer
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual appreciates
+                                    stability and routine in both
+                                    thought and behavior.
+                                    Tends to be reserved and
+                                    introverted, finding solace in
+                                    quieter, more reflective
+                                    settings.
+                                    Prefers a smaller, close-knit
+                                    social circle and may need
+                                    downtime for personal
+                                    reflection.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="margindiv">
+                    <p class="description"><b>N – Intuition – </b>You, as a intuitive individual, can
+                        subconsciously perceive patterns, connections, and possibilities beyond the realm of
+                        immediate sensory information.</p>
+                    <p class="description">The dimension Intuition vs Sensing describes<b>how you process
+                            information</b>.</p>
+                    <p class="description">The most important traits of an intuition person typically include:
+                    </p>
+                    <ul>
+                        <li class="list-item"><b> Big-Picture Thinking: </b>Intuitive individuals often focus on
+                            overarching concepts and possibilities rather than specific details.</li>
+                        <li class="list-item"><b> Creativity:</b>They possess a natural ability to generate
+                            novel ideas and envision future outcomes.</li>
+                        <li class="list-item"><b> Open-mindedness:</b>Intuitive people are often open to
+                            exploring new perspectives and unconventional approaches.</li>
+                        <li class="list-item"><b> Imagination:</b>They have a rich inner world and can visualize
+                            potential scenarios and solutions beyond what is immediately observable.
+                        </li>
+                        <li class="list-item"><b> Deep Insight:</b> Intuitive individuals tend to have profound
+                            insights into complex situations and can make connections that may not be
+                            immediately obvious to others.</li>
+                    </ul>
+                </div>
+                <div class="margindiv">
+                    <p class="description"><b>F – Feeling -</b>Your making decisions style is based on
+                        subjective values, emotions, and interpersonal considerations rather than pure logic or
+                        objective criteria.</p>
+                    <p class="description">The dimension Feeling vs Thinking describes <b>your orientation to
+                            personal values.</b></p>
+                    <p class="description">The most important traits of a feeling person typically include:</p>
+
+                </div>
+
+
+
+
+                <div class=" ">
+                    <h3 class="vertical-space">
+                        Social pattern:
+                    </h3>
+                    <p class="description">
+                        This circumplex describes how you position
+                        yourself in relation to groups and how you feel
+                        you fit in social gatherings.
+                    </p>
+                    <div class="flex-container">
+                        <!-- <div class="flex-item first"> -->
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(97 179 97 / 59%);">
+                                    <b>
+                                        Sociable Traditionalist
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual is outgoing and
+                                    social, enjoying interactions with
+                                    others.
+                                    Prefers familiar and practical
+                                    experiences over novel or
+                                    unconventional ones.
+                                    Thrives in social environments that
+                                    allow for connection and engagement
+                                    with others.
+
+                                </p>
+                            </div>
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(133 119 175);">
+                                    <b>
+                                        Tranquil Introvert
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual is generally
+                                    calm and composed, not easily
+                                    swayed by emotional ups and
+                                    downs.
+                                    Prefers a quieter and more
+                                    introspective lifestyle, finding
+                                    solace in personal space and
+                                    reflection.
+                                    May prioritize a small,
+                                    close-knit social circle over
+                                    larger social gatherings.
+
+                                </p>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        <div style="display: flex; flex-direction: column; align-items: center; padding: 1px;">
+                            <div class="chart-id-one">
+                                <p class="ab-test" style="color: rgb(97 179 97 / 59%);">AB</p>
+                                <p class="cd-test" style="color: rgb(0 67 255 / 45%);">CD</p>
+                                <p class="ef-test" style="color: rgb(133 119 175);">EF</p>
+                                <p class="gh-test" style="color: #ffa50187">GH</p>
+                                <canvas id="chartId_one" aria-label="chart" height="200px" width="200px">
+                                </canvas>
+                            </div>
+                        </div>
+                        <!-- <div class="flex-item third" > -->
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div class="content-breck ">
+                                <p class="description vertical-space"
+                                    style="text-align: left; color: rgb(0 67 255 / 45%);">
+                                    <b>
+                                        Supportive Traditionalist
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual values stability and
+                                    practicality in their approach to
+                                    life.
+                                    Is considerate, cooperative, and
+                                    places a high value on maintaining
+                                    harmonious relationships.
+                                    Thrives in environments where
+                                    teamwork, cooperation, and social
+                                    harmony are important.
+
+                                </p>
+                            </div>
+                            <div class="content-breck ">
+                                <p class="description vertical-space" style="text-align: left; color: #ffa50187">
+                                    <b>
+                                        Grounded Observer
+                                    </b>
+                                </p>
+                                <p class="description" style="font-size: 12px !important; text-align: left;">
+                                    This individual appreciates
+                                    stability and routine in both
+                                    thought and behavior.
+                                    Tends to be reserved and
+                                    introverted, finding solace in
+                                    quieter, more reflective
+                                    settings.
+                                    Prefers a smaller, close-knit
+                                    social circle and may need
+                                    downtime for personal
+                                    reflection.
+
+                                </p>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+    <!-- for polor_chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script>
+        // Define the function to create and display the polar chart
+        function createPolarChart(Id, pattern, A, B, C, D) {
+            var chrt = document.getElementById(Id).getContext("2d");
+            // Define the function to get number strings
+            function getNumberString(index) {
+                const numberStrings = [A, B, C, D];
+                return numberStrings[index] || '';
+            }
+
+            // Create the polar chart
+            // Create the polar chart
+            var chartId = new Chart(chrt, {
+                type: 'polarArea',
+                data: {
+
+                    datasets: [{
+                        data: [pattern[0], pattern[1], pattern[2], pattern[3]],
+                        backgroundColor: ['rgb(0 67 255 / 45%)', '#ffa50187', 'rgb(133 119 175)', 'rgb(97 179 97 / 59%)'],
+                        borderColor: 'transparent',
+                    }],
+                },
+                options: {
+                    responsive: false,
+                    animation: {
+                        animateRotate: false,
+                        animateScale: false
+                    },
+                    scale: {
+                        // gridLines: {
+                        //     color: 'transparent'
+                        // }
+                        display: false
+                    }
+                },
+            });
+
+        }
+        var social_pattern = [25, 30, 80, 65];
+        var interpersonal_pattern = [25, 30, 80, 65];
+        var communication_pattern = [100, 90, 95, 100];
+        var emotional_pattern = [25, 30, 80, 65];
+        var motivation_pattern = [25, 30, 50, 95];
+
+
+        createPolarChart("chartId_one", social_pattern, "GO", "SUT", "SOT", "TI");
+        createPolarChart("chartId_two", interpersonal_pattern, "SC", "IO", "AL", "EL");
+        createPolarChart("chartId_three", communication_pattern, "EIN", "TC", "CC", "EC");
+        createPolarChart("chartId_four", emotional_pattern, "CO", "RS", "SGI", "CA");
+        createPolarChart("chartId_five", motivation_pattern, "DA", "CE", "SC", "EE");
+    </script>
+</body>
+
+</html>

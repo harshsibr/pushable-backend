@@ -1,0 +1,362 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16 Types Personality Test</title>
+
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* body{
+         padding: 10px;
+       
+     } */
+        .container {
+            /* width: 60%; */
+            /* height: 100vh; */
+            background-color: white;
+            margin: auto;
+            border: 1px solid #f3f1f1;
+
+        }
+
+        .header {
+            height: 100px;
+            margin-top: 3px;
+            /* background: #137d41; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .heading-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            margin-left: 50px;
+
+        }
+
+        .heading {
+            /* color: #137d41; */
+            font-size: 40px;
+        }
+
+
+        .result {
+            margin-right: 50px;
+            /* color: #137d41; */
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            margin-bottom: 50px;
+        }
+
+
+        .main_heading {
+            font-size: 33px;
+            font-weight: 200;
+            margin: 10px 0px;
+        }
+
+        .description {
+
+            font-size: 18px !important;
+
+        }
+
+        .extra-space {
+            margin: 10px 0px !important;
+        }
+
+        .top-extra-space {
+            margin-top: 10px !important;
+        }
+
+        .sub-heading {
+            font-size: 22px;
+            font-weight: lighter;
+        }
+
+        .container {
+            margin-bottom: 6px;
+            font-size: 18px;
+        }
+
+        .apple-container {
+            display: flex;
+            gap: 14px;
+        }
+
+        .my_table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border-left: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        .noborder {
+            border-bottom: none;
+        }
+
+        .noleftborder {
+            border-left: none;
+        }
+
+        .ul-heading {
+            font-size: 16px !important;
+            font-weight: 600;
+            list-style-type: none;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .list-item {
+            margin: 0;
+            padding: 0;
+            margin-left: 17px;
+            font-size: 18px !important;
+            list-style-type: decimal;
+        }
+
+        .blocks {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* progrressbar css */
+        .progress-container {
+            width: 100%;
+            height: 40px;
+            background: white;
+            display: flex;
+            color: white;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            page-break-inside: avoid !important;
+
+        }
+
+        .first {
+            height: 100%;
+            /* width: 50%; */
+            /* background: red; */
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .second {
+            /* width: 50%; */
+            height: 100%;
+            /* background: blue; */
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .chart-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .container_piechart {
+            width: 80%;
+            margin: 15px auto;
+        }
+
+        #oilChart {
+            width: 350px !important;
+            height: 350px !important;
+            /* font-size: 20px !important; */
+
+        }
+
+        .blocks {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .blocks>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 25%;
+            height: 200px;
+            padding: 10px;
+
+        }
+
+        .margindiv {
+            margin-top: 5px;
+        }
+
+        .marginDiv {
+            margin-top: 5px;
+        }
+
+        .marginDivs {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .dis1 {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <header class="header">
+                <div class="heading-container">
+                    <h1 class="heading">Big Five Test</h1>
+                    <h1 class="heading">Personality Test</h1>
+                </div>
+                <div class="result" style="margin-bottom: 0;">
+                    <h4>
+                        RESULTS FOR: <b>
+                            Test
+                        </b>
+                    </h4>
+                </div>
+            </header>
+            <section>
+
+                <!-- <div
+                    style="display: flex; flex-direction: column; align-items: center; width:26%; height:auto; padding: 10px;">
+                    <div style="display: flex; justify-content: center;">
+                        <canvas id="chartId" aria-label="chart" height="330px" width="200px"></canvas>
+                    </div>
+                </div> -->
+
+                <div style="width: 400px; height: 400px;">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script>
+        function createPolarChart(Id, pattern, A, B, C, D) {
+            var chrt = document.getElementById(Id).getContext("2d");
+            
+            function getNumberString(index) {
+                const numberStrings = [A, B, C, D];
+                return numberStrings[index] || '';
+            }
+
+            var chartId = new Chart(chrt, {
+                type: 'polarArea',
+                data: {
+                    datasets: [{
+                        data: [pattern[0], pattern[1], pattern[2], pattern[3]],
+                        // data: pattern,
+                        backgroundColor: ['skyblue', 'blue', 'yellow', 'yellowgreen'],
+                        borderColor: 'transparent',
+                    }],
+                },
+
+                options: {
+                    responsive: false,
+                    animation: {
+                        animateRotate: false,
+                        animateScale: false
+                    },
+                    scale: {
+                        // gridLines: {
+                        //     color: 'transparent'
+                        // }
+                        display: false
+                    },
+
+                },
+            });
+
+        }
+        var core_pattern = [5, 4, 8, 1];
+        var interpersonal_pattern = [25, 21, 54, 85]
+        var communication_pattern = [69, 52, 36, 75];
+        var emotional_pattern = [21, 24, 78, 58];
+        var motivation_pattern = [58, 82, 54, 35];
+        var productivity_pattern = [45, 12, 74, 36];
+        var rewards_pattern = [54, 45, 42, 57];
+        var esteem_pattern = [41, 41, 45, 44];
+        var social_pattern = [22, 14, 54, 74];
+        var collaboration_innovation_pattern = [14, 65, 54, 46];
+
+        createPolarChart("chartId", core_pattern, "EI", "DA", "EE", "ERFS");
+    </script> -->
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Get chart data from server-side rendering
+        const chartData = {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+        // Create chart
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: chartData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

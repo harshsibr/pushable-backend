@@ -1,0 +1,148 @@
+<html>
+
+<head>
+
+    <title>CERTIFICATE</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./certificate-style.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <div class="container-fluid">
+        <div class="body">
+            <div class="bg-green">
+            <div class="bg-white">
+                <div class="bg-gray">
+                    <div class="body-content imgs">
+                        <div class="">
+                            <div>
+                                <h5 style="margin: 20px 0 10px 0;"><b> Your culture fair intelligence test results: </b></h5>
+                                <p>You have answered <b> <%= culturetestinfo['noofcurrectans'] %> </b>  of <b>  30 </b> questions correctly.</p>
+                                <p>You scored higher than <b> <%= culturetestinfo['percentile'] %> % </b> of all people that took this test</p>
+                                <p>Your IQ test results correspond <b> with an IQ of <%= culturetestinfo['score'] %> </b>.</p>
+                                <p>Depending on your level of concentration, your experience in taking IQ tests and  other specific circumstances under which you took the test your result is not an absolute or fixed value . This the reason why  the report also lists a range within which your score may vary . A reliable estimate of your IQ score according to industry standards lies within a range of <b> <%= culturetestinfo['lessScore'] %> </b> and <b> <%= culturetestinfo['greaterScore'] %> </b></p>
+                            </div>
+                            <div>
+                                <% if (culturetestinfo.scoreurl2 !== "") { %>
+                                <img class="" src="<%= culturetestinfo['scoreurl2'] %>" style="width: 100%;" alt="scoreurl2">
+                                <% } %>
+                            </div>
+                            <div>
+                                <h5 style="padding: 25px 0 10px 0; margin-top: 50px;"><b> How your score is calculated : </b></h5>
+                                <p>Once you have answered all the questions of the test your results are validated and compared with data from other participants in the same age group, and subsequently, your final scores are calculated and standardized. 
+                                    Standardizing a score means that, after performing a series of mathematical transformations, the mean raw score (that is, the average number of correct answers of all test-takers together) is expressed as a different number. In IQ tests, by convention, it is expressed as 100. In this way, a score of 100 represents the mean; 50% of test-takers have scores below 100, and the other 50% have scores above 100.
+                                    Below you can find a graph of the distribution of IQ scores, showing the percentage of people falling below or above certain scores.
+                                </p>
+                                <p>Distribution of IQ scores in the general population:</p>
+                                <div>
+                                    <img class="" src="https://api.testuity.com/certificate_logo/Graph4.jpeg" style="width: 100%;" alt="Graph4">
+                                </div>
+                                <p style="margin-top: 110px; padding-top: 60px;">The average score is 100. Approximately 68% of the population has an IQ score within the range of 85 to 115. Approximately 95% of the population stand within a range of 70 to 130.
+                                    The extreme values for this research have been set to 145 as the highest and 70 as the lowest.
+                                </p>
+                            </div>
+
+                            <div style="margin: 40px 0 10px 0;">
+                                <p>IQ score ranges: </p>
+                                <table style="margin-top: 50px" class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">IQ scale</th>
+                                        <th scope="col">Interpretation of IQ score</th>
+                                        <th scope="col">% of population</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">Above 130</th>
+                                        <td>Very gifted</td>
+                                        <td>2.1%</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">121-130</th>
+                                        <td>Gifted</td>
+                                        <td>6.4%</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">111-120</th>
+                                        <td>Above average intelligence</td>
+                                        <td>15.7%</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">90-110</th>
+                                        <td>Average intelligence</td>
+                                        <td>51.6%</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">80-89</th>
+                                        <td>Below average intelligence</td>
+                                        <td>15.7%</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">70-79</th>
+                                        <td>Cognitively impaired</td>
+                                        <td>6.4%</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>
+                                <p style="margin-top: 50px;">Recent studies conclude that <b>men on average have higher intelligence than women by 3-5 points .</b></p>
+                                <p style="margin-top: 50px;">Different types of intelligence show different patterns as you get older. Crystallized intelligence
+                                    <b>averages 98 at ages 20-24, rises to 101 by ages 35-44, before declining to 100 for ages 45-54, then 98 for ages 55-64, then 96 for ages 65-69, then 93 for ages 70-74 and 88 for 75+.</b>
+                                </p>
+                                <p style="margin-top: 50px;">The most important variation of the average that must be taken into consideration is the one that appear as a consequence of different educational levels . For example , as 100 is the average for the total population ,
+                                    <b>for high school graduates the average rises to 105, to about 115 for college graduates and for persons with Bachelors degree , 118 for persons with Masters degrees and reaching 125 for persons receiving Doctorate PhD/MD degrees.</b>
+                                </p>
+                            </div>
+                            <div>
+                                <% if (culturetestinfo.scoreurl1 !== "") { %>
+                                <img class="" src="<%= culturetestinfo['scoreurl1'] %>" style="width: 100%;" alt="scoreurl1">
+                                <% } %>
+                            </div>
+                            <div style="padding-bottom: 900px;">
+                                <h5><b> IQ test accuracy : </b></h5>
+                                <p>Below , a graph representing the decrease of the error (in IQ points|) with the increase of the number of questions. The more questions you answer , the more accurate results you will have . In our case , due to the fact that test is taken over the internet, the length of the question list has intentionally been limited so bear in mind that accidental mistakes as distractions/disruptions have more consequences if the question list is shorter.</p>
+                                <div>
+                                    <img class="" src="https://api.testuity.com/certificate_logo/Graph5.jpeg" style="width: 100%; height: 50%;" alt="Graph5">
+                                </div>
+                                <p>That is why we provide a error together with your score. </p>
+                                <p>In the rare cases of very high or low scores it is difficult to give an accurate rating and you must bear in mind that only a few incorrect answers more or less have a substantial effect on the IQ score.</p>
+                                <p><b>What does an IQ test measure?</b></p>
+                                <p>Intelligence still is a rather abstract concept, usually defined as a random collection of skills and inclinations. Psychologist and Harvard professor Howard Gardner distinguishes eight aspects of intelligence: linguistic, logical, musical, spatial, intrapersonal (distinguishing feelings and the ability to create accurate mental models of one's self), interpersonal (distinguishing and recognizing the feelings of others), kinesthetic (use of the body at a highly developed level) and naturalistic (distinguishing, classifying and using aspects of the environment). </p>
+                                <p>Most IQ tests used , however, measure IQ based on a more conventional definition and that definition assumes there is only one form of intelligence, the<b>General Intelligence. </b></p>
+                                <p>Exercises focus on aspects such as logical thinking, spatial and technical insight, arithmetic skills and linguistic skills. However, the exact composition of every intelligence test can be different.</p>
+                                <p><b>IQ Scores</b></p>
+                                <p>As said before , after performing a series of mathematical transformations, the score is standardized and the mean raw score ( the average number of correct answers of all test-takers together) is expressed as a different number. In IQ tests, by convention, it is expressed as 100. In this way, a score of 100 represents the mean; 50% of test-takers have scores below 100, and the other 50% have scores above 100.</p>
+                                <p style="margin-top: 20px; padding-top: 50px;">Scores above 130 and below 70 only occur in 5 out of every 100 cases. Very high or low scores are rare and it is difficult to give an accurate rating of such scores.</p>
+                                <p>Generally, the higher the education is, the higher is the IQ. Small differences can be observed between men and women, younger and older people.</p>
+                                <p>A 'high' IQ is not necessarily something good and a low IQ is not necessarily 'bad'. An IQ score does not tell you anything about someone's ability to create beautiful music or tell you that someone is good company or is bad in sports. </p>
+                                <p>Although a higher IQ generally seems to be related to success, a higher IQ of course does not guarantee happiness. After all, your IQ is only one component of what you are or what you are able to do.</p>
+                                <p>We should think also about another important component , EQ, emotional intelligence , which latest studies relate (more than IQ) to all kinds of success that you may have in your life.</p>
+                                <p>An IQ score is relative not absolute because score is always determined in comparison to the scores of others and who those others are and when they completed the test, is very important. The result of your IQ test therefore is an indication of how you, compared to others, have done on this intelligence test and probably will score on subsequent comparable IQ tests . </p>
+                                <p>We must take into consideration also a phenomenon called the Flynn effect. These days, people score higher than people in the past. Comparing someone with a group from the past results in an overrating that can reach at times no less than 25 IQ points!</p>
+                                <p><b>If and how you can increase your IQ.</b></p>
+
+                                <p>The main question is whether IQ is something that you just have or something you can improve and the answer clearly depends on the IQ definition. </p>
+                                <p>People younger than 20 see their IQ increasing and people older than 55 see it decreasing.</p>
+                                <p>Forms of intelligence as vocabulary and general knowledge can be learned and others , as innate linguistic or mathematical special inclinations, cannot.</p>
+                                <p>Some types of IQ measuring tests can be practiced , questions can be recognized and consequently you make fewer errors, so practice helps and improve your overall results.</p>
+                                <p>Because of IQ great importance, being the best indicator of social, academic and economic success , its increase through psychological interventions and trainings has been one of greatest efforts made by researchers.</p>
+                                <p>An IQ increase open numerous improvements in a person life, meaning the possibilities to learn and understand faster, to have a higher performance in all the intellectual areas in which the brain activity and its quality is the key attribute for succeeding in various reasoning tasks ,  creative or analytical, all leading to better decisions and an improved life in all its aspects.</p>
+                                <p>We can draw a quick conclusion : IQ is not a constant , it varies . </p>
+                                <p>Supporting the idea that IQ  increases are the discoveries made in the mid-eighties by James Flynn from New Zealand, a psychologist at the University of Otago. He discovered that scores for intelligence tests in fourteen industrialized nations increased by twenty IQ points per generation since 1930. </p>
+                                <p style="padding-top: 40px;">On the other hand, these days you may also come across researchers who claim that this increase has now turned to a decrease. </p>
+                                <p>All the more reason to critically evaluate the results of IQ tests, and especially to look at the dating of the norms and the samples of people that were part of the reference group.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

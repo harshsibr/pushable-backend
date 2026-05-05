@@ -1,0 +1,56 @@
+<html>
+
+<head>
+
+    <title>CERTIFICATE</title>
+    
+</head>
+
+
+<body>
+    <div class="container-fluid">
+        <div class="body">
+            <div class="bg-purple">
+                <div class="bg-white">
+                    <div class="bg-purple">
+                        <div class="header">
+                            <img src="" alt="">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                        <div class="content">                
+                            <p style="color: black;"> Hello <b><%= username %></b> </p>
+                            <p style="color: black;">Thank you for taking our test!<p>
+                            <% if (questionnaire == "Culture Fair IQ test") { %>                                
+                                <p style="color: black;">You have answered <b> <%= noofcurrectans %> </b>  of <b>  20 </b> questions correctly.</p>
+                                <!-- <br> -->
+                            <% } %>
+                            <!-- <p style="color: black;">You scored higher than <b> <%= percentile %> % </b> of all people that took this test</p> -->
+                            <!-- <p style="color: black;">Your IQ may well exceed <%= score %>!</p> -->
+                             <p style="color: black;">You scored higher than <b> 95 % </b> of all people that took this test</p>
+                            <p style="color: black;">Your IQ may well exceed 128 !</p>
+                            <p style="color: black;">
+                                <b>Want to discover your true IQ potential?</b><br>
+                                Retake our <a href="https://testuity.com/free-culture-fair-iq-test"> free culture‑fair IQ </a> test and this time answer all 30 questions to get a complete assessment and prepare for real‑world job IQ challenges.
+                            <br>
+                            At the end, unlock your results with one of these options:<br>
+                            <b>• $4.90</b> – IQ score + Official IQ Certificate<br>
+                            <b>• $9.90</b> – IQ score + Official IQ Certificate + Full Report with detailed analysis.
+                            </p>
+                            <% if (paidTestLink !== "") { %>
+                                <div style="color: black;">
+                                        <% if (password !== "") { %>
+                                            <p style="margin-top: 20px;"> Your Password <b><%= password %></b> </p>
+                                        <% } %>
+                                </div>
+                            <% } %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

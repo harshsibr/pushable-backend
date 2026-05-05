@@ -1,0 +1,110 @@
+<html>
+
+<head>
+
+    <title>CERTIFICATE</title>
+    
+</head>
+
+
+<body>
+    <div class="container-fluid">
+        <div class="body">
+            <div class="bg-purple">
+                <div class="bg-white">
+                    <div class="bg-purple">
+                        <div class="header">
+                            <img src="" alt="">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                        <div class="content" style="margin-bottom: 40px;">                
+                            <p> Hello <b><%= username %></b> </p>
+                            <p >Thank you for taking our test!<p>
+                            <% if (questionnaire == "Free Classical IQ test" || questionnaire == "Free Culture Fair IQ test" || questionnaire == "Classical IQ test") { %>                                
+                                <p>You have answered <b> <%= noofcurrectans %> </b>  of <b>  <%= Qcountt %> </b> questions correctly.</p>
+                                <!-- <br> -->
+                            <% } %>
+                            <% if (questionnaire == "Culture Fair IQ test") { %>                                
+                                <p>You have answered <b> <%= noofcurrectans %> </b>  of <b>  30 </b> questions correctly.</p>
+                                <!-- <br> -->
+                            <% } %>
+                            <% if (questionnaire == "Culture Fair IQ test" || questionnaire == "Classical IQ test") { %>
+                                <p>You scored higher than <b> <%= percentile %> % </b> of all people that took this test</p>
+                                <!-- <br> -->
+                                <p>Your IQ test results correspond <b> with an IQ of <%= score %> </b>.</p>
+                            <% } %>
+                            <!-- <% if (questionnaire == "Culture Fair IQ test" && classicalTestStatus == false) { %>
+                                <div style="margin-top: 20px;">
+                                    <p>Maybe you want to try our second paid test<b>:</b>
+                                        <a href="https://testuity.com/user/questionaire/quiz?questionnaireID=64366966f923aa5ea7ad37d3"> <%= paidTestButton="Classical IQ test"; %> </a>
+                                    </p>
+                                </div>
+                            <% } %>
+                            <% if (questionnaire == "Classical IQ test" && cultureTestStatus == false) { %>    
+                                <div style="margin-top: 20px;">
+                                    <p>Maybe you want to try our second paid test<b>:</b>
+                                        <a href="https://testuity.com/user/questionaire/quiz?questionnaireID=6436694cf923aa5ea7ad37cc"> <%= paidTestButton="Culture Fair IQ test"; %> </a>
+                                    </p>
+                                </div>
+                            <% } %> -->
+
+                            <% if (careerTestStatus == false || discTestStatus == false || bigFiveTestStatus == false || ennagramTestStatus == false || sixteentypeTestStatus==false || classicalTestStatus == false || cultureTestStatus == false ) { %>    
+                                    <p>Maybe you want to try our other paid tests<b>:</b></p>
+                                    <% if (classicalTestStatus == false) { %>    
+                                        <div style="margin-top: 20px;">
+                                            <!-- <a href="https://testuity.com/user/questionaire/quiz?questionnaireID=64366966f923aa5ea7ad37d3"> <%= paidTestButton="Classical IQ test"; %> </a> -->
+                                            <a href="https://testuity.com/classical-iq-test"> <%= paidTestButton="Classical IQ test"; %> </a>
+                                        </div>
+                                    <% } %>
+                                    <% if (cultureTestStatus == false) { %>    
+                                        <div style="margin-top: 20px;">
+                                            <!-- <a href="https://testuity.com/user/questionaire/quiz?questionnaireID=6436694cf923aa5ea7ad37cc"> <%= paidTestButton="Culture Fair IQ test"; %> </a> -->
+                                            <a href="https://testuity.com/culture-fair-iq-test"> <%= paidTestButton="Culture Fair IQ test"; %> </a>
+                                        </div>
+                                    <% } %>
+                                    <% if (ennagramTestStatus == false) { %>    
+                                        <div style="margin-top: 20px;">
+                                            <!-- <a href="https://testuity.com/user/questionaire/enneagram?questionnaireID=65586e235046c32c7cd385cd"> <%= paidTestButton="Enneagram test"; %> </a> -->
+                                            <a href="https://testuity.com/enneagram-personality-test"> <%= paidTestButton="Enneagram test"; %> </a>
+                                        </div>
+                                    <% } %>
+                                    <% if (sixteentypeTestStatus == false) { %>    
+                                        <div style="margin-top: 20px;">
+                                            <!-- <a href="https://testuity.com/user/questionaire/sixteentype?questionnaireID=65d33b0f9bef2027f0594db2"> <%= paidTestButton="16 types personality test"; %> </a> -->
+                                            <a href="https://testuity.com/16-types-personality-test"> <%= paidTestButton="16 types personality test"; %> </a>
+                                        </div>
+                                    <% } %>
+                                    <% if (bigFiveTestStatus == false) { %>    
+                                        <div style="margin-top: 20px;">
+                                            <!-- <a href="https://testuity.com/user/questionaire/bigFivetype?questionnaireID=65ec352edbd8850c638f33fd"> <%= paidTestButton="Big five personality test"; %> </a> -->
+                                            <a href="https://testuity.com/big-five-personality-test"> <%= paidTestButton="Big five personality test"; %> </a>
+                                        </div>
+                                    <% } %>
+                                    <% if (discTestStatus == false) { %>    
+                                        <div style="margin-top: 20px;">
+                                            <!-- <a href="https://testuity.com/user/questionaire/disc?questionnaireID=662f3b21d3279b1ec0877cd0"> <%= paidTestButton="DISC personality test"; %> </a> -->
+                                            <a href="https://testuity.com/disc-personality-test"> <%= paidTestButton="DISC personality test"; %> </a>
+                                    </div>
+                                    <% } %>
+                                    <% if (careerTestStatus == false) { %>    
+                                        <div style="margin-top: 20px;">
+                                            <!-- <a href="https://testuity.com/user/questionaire/careerAptitude?questionnaireID=66433c87986a6833bc93d9bc"> <%= paidTestButton="Career Aptitude test"; %> </a> -->
+                                            <a href="https://testuity.com/career-aptitude-test"> <%= paidTestButton="Career Aptitude test"; %> </a>
+                                    </div>
+                                    <% } %>
+                                <% } %>
+                                <div>
+                                    <% if (isPassword == true) { %>
+                                        <p style="margin-top: 20px;"> Here is your random generated password : <b><%= password %></b> </p>
+                                    <% } %>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
