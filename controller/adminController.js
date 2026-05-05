@@ -4538,17 +4538,18 @@ const addBlog = async (req, res) => {
     let featuredImage = req?.files?.featuredImage || null;
     let img;
     if (featuredImage) {
-      const filePath = path.join(__dirname, '../public/blog/', `${featuredImage.name}`);
       var allowedExtensions = /(\.jpg|\.jpeg|\.JPEG|\.JPG|\.png|\.gif)/;
-      img = `${process.env.hostPath}/blog/` + `${featuredImage.name}`;
-      if (!allowedExtensions.exec(filePath)) {
-        res.status(500).send('Invalid file type');
-        return
-      } else {
-        featuredImage.mv(filePath, err => {
-          if (err) return res.send(err)
-        });
+      if (!allowedExtensions.exec(featuredImage.name)) {
+        return res.status(500).send('Invalid file type');
       }
+      const cloudinary = require('cloudinary').v2;
+      cloudinary.config({
+        cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+        api_key: process.env.CLOUDINARY_API_KEY,
+        api_secret: process.env.CLOUDINARY_API_SECRET,
+      });
+      const result = await cloudinary.uploader.upload(featuredImage.tempFilePath, { folder: 'blog' });
+      img = result.secure_url;
     }
 
     const newBlog = new Blog({
@@ -4688,17 +4689,18 @@ const updateBlog = async (req, res) => {
     let featuredImage = req?.files?.featuredImage || null;
     let img;
     if (req?.files && featuredImage) {
-      const filePath = path.join(__dirname, '../public/blog/', `${featuredImage.name}`);
       var allowedExtensions = /(\.jpg|\.jpeg|\.JPEG|\.JPG|\.png|\.gif)/;
-      img = `${process.env.hostPath}/blog/` + `${featuredImage.name}`;
-      if (!allowedExtensions.exec(filePath)) {
-        res.status(500).send('Invalid file type');
-        return
-      } else {
-        featuredImage.mv(filePath, err => {
-          if (err) return res.send(err)
-        });
+      if (!allowedExtensions.exec(featuredImage.name)) {
+        return res.status(500).send('Invalid file type');
       }
+      const cloudinary = require('cloudinary').v2;
+      cloudinary.config({
+        cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+        api_key: process.env.CLOUDINARY_API_KEY,
+        api_secret: process.env.CLOUDINARY_API_SECRET,
+      });
+      const result = await cloudinary.uploader.upload(featuredImage.tempFilePath, { folder: 'blog' });
+      img = result.secure_url;
     }
 
     const blogData = await Blog.findOne({ _id: id });
