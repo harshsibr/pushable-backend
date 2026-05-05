@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }))
 app.use(bodyParser.json({ limit: "50mb" }));
 // app.use(express.json({ limit: '4mb' }));
 // app.use(helmet());
-const whitelist = ["https://testuity.com", "https://www.testuity.com", "https://admin.testuity.com", "http://localhost:3000", "http://localhost:3001", "http://localhost:5173" , "https://gpay-stripe.ibrcloud.com" , "https://iq-management-admin.ibrcloud.com", "https://iq-api.ibrcloud.com/api", "http://iq-api.ibrcloud.com", "https://iq-management.ibrcloud.com", "https://iq-testing.ibrcloud.com", "https://testuity.ibrcloud.com", "https://admin.testuity.ibrcloud.com"]
+const whitelist = ["https://testuity.com", "https://www.testuity.com", "https://admin.testuity.com", "http://localhost:3000", "http://localhost:3001", "http://localhost:5173" , "https://gpay-stripe.ibrcloud.com" , "https://iq-management-admin.ibrcloud.com", "https://iq-api.ibrcloud.com/api", "http://iq-api.ibrcloud.com", "https://iq-management.ibrcloud.com", "https://iq-testing.ibrcloud.com", "https://testuity.ibrcloud.com", "https://admin.testuity.ibrcloud.com", "https://pushable-animated.vercel.app"]
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || whitelist.indexOf(origin) !== -1) {
