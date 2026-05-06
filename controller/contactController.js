@@ -3,6 +3,7 @@ const { Resend } = require('resend');
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendContactEmail = async (req, res) => {
+  console.log('RESEND_API_KEY loaded:', process.env.RESEND_API_KEY);
   try {
     const { name, fullName, email, phone, company, subject, message } = req.body;
     const senderName = fullName || name;
@@ -49,18 +50,24 @@ const sendContactEmail = async (req, res) => {
       </div>
     `;
 
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: 'ibr.suhel@gmail.com',
-      reply_to: 'harshsadh21@gmail.com',
+      to: 'harshs.ibr@gmail.com',
+      reply_to: email,
       subject: `Contact: ${subject}`,
       html,
     });
 
+    if (error) {
+      console.error('Resend error:', JSON.stringify(error, null, 2));
+      return res.status(500).json({ message: 'Failed to send message.', error: error.message });
+    }
+
+    console.log('Email sent, id:', data?.id);
     return res.status(200).json({ message: 'Message sent successfully!' });
   } catch (err) {
-    console.error(err);
-    return res.status(500).json({ message: 'Failed to send message. Please try again.' });
+    console.error('Unexpected error:', JSON.stringify(err, null, 2));
+    return res.status(500).json({ message: 'Failed to send message. Please try again.', error: err?.message });
   }
 };
 
