@@ -50,6 +50,7 @@
     "puppeteer-core": "^19.8.5",
     "puppeteer-extra": "^3.3.6",
     "randomstring": "^1.2.3",
+    "resend": "^6.12.2",
     "socket.io": "^4.4.0",
     "stripe": "^9.14.0",
     "uuid": "^8.3.2"
