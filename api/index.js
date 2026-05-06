@@ -57,7 +57,7 @@ app.use((req, res, next) => {
 app.use(express.static('/var/www/html/iq-backend-nodejs/public'));
 // app.use(express.static('./public'));
 app.use(express.static(__dirname));
-app.use(fileUpload());
+app.use(fileUpload({ useTempFiles: true, tempFileDir: '/tmp/' }));
 
 app.use(function (req, res, next) {
   res.setHeader(
